@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "Examen\\Scripts\\python.exe"
+    "python.pythonPath": "Examen\\Scripts\\python.exe",
+    "git.ignoreLimitWarning": true
 }
