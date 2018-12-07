@@ -1,34 +1,10 @@
-<!-- {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inicio</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'aplicacion/css/estilo.css' %}">
-</head>
-<body>
-    <div class="elHeader">
-        <a class="logo" href="/">
-            <h2>SOLO
-            <span style="color:orange">
-                TU
-            </span></H2>
-        </a>
-        <form action="">
-                Nombre de Usuario: <input type="text" name="txtUsuario">  Contraseña: <input type="password" name="txtPass">
-        </form>
-    </div>
-</body>
-</html> -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
+  <title>SOLO TU</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="{% static 'aplicacion/css/estilo.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -59,18 +35,19 @@
         <li><a href="#">Page 3</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="registro.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
   
 <div class="container">
-  <h3>Collapsible Navbar</h3>
-  <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).
-  <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-</div>
 
+</div>
+<form method="POST" action="">{% csrf_token %}
+  {{el_form.as_p}}
+  <input type="submit" value="Registrame">
+</form>
 </body>
 </html>

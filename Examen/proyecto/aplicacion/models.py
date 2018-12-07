@@ -6,9 +6,12 @@ class Usuario(models.Model):
     nomUsuario = models.CharField(max_length=50, primary_key=True)
     contrasenia = models.CharField(max_length=30)
 
+    def RegistrarUsuario(self):
+        self.save()
+
 class Lista(models.Model):
     nombreLista = models.CharField(max_length=50)
-    total =  models.IntegerField()
+    total =  models.IntegerField(default=0)
     nombreUsuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
 class Producto(models.Model):
@@ -26,4 +29,5 @@ class DetalleLista(models.Model):
 class DetalleTienda(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     nombreTienda = models.ForeignKey(Tienda, on_delete=models.CASCADE)
-    precio = models.IntegerField()
+    precio = models.IntegerField(default=0)
+
